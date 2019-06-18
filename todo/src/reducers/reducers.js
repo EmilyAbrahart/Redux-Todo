@@ -11,19 +11,22 @@ const initialState = {
 export default function todoReducer(state = initialState, action) {
 	switch (action.type) {
 		case ADD_TODO:
-			return [...state.todos, action.payload];
+			return {
+				todos: [...state.todos, action.payload]
+			};
 
-		case MARK_COMPLETE: {
-			return state.map(todo => {
-				return todo.id === action.payload.id
-					? { ...todo, completed: true }
-					: todo;
-			});
-		}
+		case MARK_COMPLETE:
+			return {
+				todos: state.todos.map(todo => {
+					if (todo.id === action.payload) {
+						return { ...todo, completed: true };
+					}
+					return todo;
+				})
+			};
 
-		case CLEAR_COMPLETE: {
-			return state.filter(todo => !todo.completed);
-		}
+		case CLEAR_COMPLETE:
+			return { todos: state.todos.filter(todo => !todo.completed) };
 
 		default:
 			return state;
