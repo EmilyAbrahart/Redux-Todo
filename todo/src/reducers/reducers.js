@@ -19,7 +19,7 @@ export default function todoReducer(state = initialState, action) {
 			return {
 				todos: state.todos.map(todo => {
 					if (todo.id === action.payload) {
-						return { ...todo, completed: true };
+						return { ...todo, completed: !todo.completed };
 					}
 					return todo;
 				})
