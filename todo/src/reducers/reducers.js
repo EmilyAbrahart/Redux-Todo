@@ -4,7 +4,9 @@ import uuid from 'uuid';
 const initialState = {
 	todos: [
 		{ id: uuid(), value: 'Make a todo list', completed: false },
-		{ id: uuid(), value: 'Fix todo list', completed: false }
+		{ id: uuid(), value: 'Fix todo list', completed: false },
+		{ id: uuid(), value: 'Learn Redux', completed: false },
+		{ id: uuid(), value: 'Try not to break everything!', completed: false },
 	]
 };
 
