@@ -25,7 +25,12 @@ const TodoCompleteButton = styled.button`
 `;
 
 const TodoDeleteButton = styled.button`
-	${Button(color_warning, color_light)}
+	${Button(color_subtle, color_light)};
+	&:hover {
+		background-color: ${color_warning};
+		color: ${color_light};
+		border-color: ${color_light};
+	}
 `;
 const TodoSpan = styled.span`
 	text-decoration: ${props => (props.completed ? 'line-through' : 'none')};

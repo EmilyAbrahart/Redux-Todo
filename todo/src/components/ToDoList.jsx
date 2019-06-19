@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ToDo from './ToDo';
 import { markComplete, deleteTodo } from './../actions/actions';
 import styled from 'styled-components';
-import {FlexFunc, color_light} from './../~reusables/reusables'
+import {FlexFunc, color_light, shadow} from './../~reusables/reusables'
 
 const TodoListDiv = styled.div`
 ${FlexFunc('column', 'center', 'flex-start')};
@@ -12,6 +12,7 @@ background: ${color_light};
 margin-top: 2rem;
 border-radius: 2rem;
 padding: 2rem;
+box-shadow: ${shadow};
 `
 
 function ToDoList(props) {
