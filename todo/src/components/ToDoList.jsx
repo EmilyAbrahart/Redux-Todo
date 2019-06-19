@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ToDo from './ToDo';
-import { markComplete } from './../actions/actions';
+import { markComplete, deleteTodo } from './../actions/actions';
 import styled from 'styled-components';
 import {FlexFunc, color_light} from './../~reusables/reusables'
 
@@ -18,7 +18,7 @@ function ToDoList(props) {
 	return (
 		<TodoListDiv>
 			{props.todos.map(todo => (
-				<ToDo key={todo.id} markComplete={props.markComplete} {...todo} />
+				<ToDo key={todo.id} markComplete={props.markComplete} deleteTodo={props.deleteTodo} {...todo} />
 			))}
 		</TodoListDiv>
 	);
@@ -30,5 +30,5 @@ const mapStateToProps = state => {
 
 export default connect(
 	mapStateToProps,
-	{ markComplete }
+	{ markComplete, deleteTodo }
 )(ToDoList);

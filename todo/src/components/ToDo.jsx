@@ -31,7 +31,7 @@ const TodoDeleteButton = styled.button`
 export default function ToDo(props) {
 	return (
 		<TodoDiv>
-			<TodoDeleteButton>Delete</TodoDeleteButton>
+			<TodoDeleteButton onClick={() => props.deleteTodo(props.id)} >Delete</TodoDeleteButton>
 			<TodoCompleteButton
 				onClick={() => props.markComplete(props.id)}
 				completed={props.completed}
