@@ -41,6 +41,7 @@ function ToDoForm(props) {
 	const onAddTodo = e => {
 		e.preventDefault();
 		props.addToDo(textRef.current.value);
+		textRef.current.value='';
 	};
 
 	return (

@@ -17,7 +17,6 @@ export const addToDo = text => {
 };
 
 export const markComplete = id => {
-	console.log('completing');
 	return { type: MARK_COMPLETE, payload: id };
 };
 
