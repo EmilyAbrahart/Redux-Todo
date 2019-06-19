@@ -27,18 +27,24 @@ const TodoCompleteButton = styled.button`
 const TodoDeleteButton = styled.button`
 	${Button(color_warning, color_light)}
 `;
+const TodoSpan = styled.span`
+	text-decoration: ${props => (props.completed ? 'line-through' : 'none')};
+	color: ${props => (props.completed ? color_subtle : 'black')};
+`;
 
 export default function ToDo(props) {
 	return (
 		<TodoDiv>
-			<TodoDeleteButton onClick={() => props.deleteTodo(props.id)} >Delete</TodoDeleteButton>
+			<TodoDeleteButton onClick={() => props.deleteTodo(props.id)}>
+				Delete
+			</TodoDeleteButton>
 			<TodoCompleteButton
 				onClick={() => props.markComplete(props.id)}
 				completed={props.completed}
 			>
 				{props.completed ? 'Undo' : 'Complete'}
 			</TodoCompleteButton>
-			<span>{props.value}</span>
+			<TodoSpan completed={props.completed}>{props.value}</TodoSpan>
 		</TodoDiv>
 	);
 }
