@@ -9,7 +9,7 @@ import {
 } from './../~reusables/reusables';
 
 const TodoDiv = styled.div`
-	margin-left: 3rem;
+	margin-left: 1rem;
 	padding: 1rem;
 `;
 
@@ -41,7 +41,7 @@ export default function ToDo(props) {
 	return (
 		<TodoDiv>
 			<TodoDeleteButton onClick={() => props.deleteTodo(props.id)}>
-				Delete
+				x
 			</TodoDeleteButton>
 			<TodoCompleteButton
 				onClick={() => props.markComplete(props.id)}
